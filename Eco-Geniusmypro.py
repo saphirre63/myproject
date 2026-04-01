@@ -1077,4 +1077,4 @@ def hydro_estimate():
     return jsonify({"system_size_kw": f"{kw:.2f}", "total_cost": f"{curr}{max(2000, kw*cost_per_kw):,.0f}"})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
